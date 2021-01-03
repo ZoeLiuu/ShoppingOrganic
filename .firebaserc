@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "oshop-fe22b": {
+      "hosting": {
+        "ShoppingOrganic": [
+          "oshop-fe22b"
+        ]
+      }
+    }
+  }
+}
