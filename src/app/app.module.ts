@@ -24,6 +24,9 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
+import { ProductFormComponent } from './admin/product-form/product-form.component';
+import { UserService } from './user.service';
+import { CategoryService } from './category.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { AuthGuardService } from './auth-guard.service';
     OrderSuccessComponent,
     MyOrdersComponent,
     AdminProductsComponent,
-    AdminOrdersComponent
+    AdminOrdersComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
@@ -55,13 +59,16 @@ import { AuthGuardService } from './auth-guard.service';
       { path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGuardService] },
 
       { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuardService] },
+      { path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthGuardService] },
       { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuardService] }
     ]),
     NgbModule
   ],
   providers: [
     AuthService,
-    AuthGuardService
+    AuthGuardService,
+    UserService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })
