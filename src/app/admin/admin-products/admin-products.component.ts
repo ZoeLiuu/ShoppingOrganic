@@ -14,7 +14,7 @@ export class AdminProductsComponent implements OnInit {
     this.products$ = this.productService.getAll()
       .snapshotChanges()
       .pipe(map(changes => changes
-        .map(c => ({ key: c.payload.key, ...c.payload.val() }))))
+        .map(c => ({ key: c.payload.key, ...c.payload.val() }))));
   }
 
   ngOnInit(): void {
