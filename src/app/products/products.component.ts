@@ -7,6 +7,7 @@ import { ProductService } from '../product.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent {
+
   products$;
 
   constructor(productService: ProductService) {
